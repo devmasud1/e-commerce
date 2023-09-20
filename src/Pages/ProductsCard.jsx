@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const ProductsCard = ({ product }) => {
-  const { thumbnail, title, price } = product;
+  const {id, thumbnail, title, price } = product;
   return (
     <div className="card w-full bg-base-100 shadow-xl">
       <figure className="px-8 pt-10 h-[300px]">
@@ -38,7 +40,9 @@ const ProductsCard = ({ product }) => {
 
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-bold">${price}</h1>
-          <button className="btn btn-active btn-neutral">Buy Now</button>
+          <Link to={`/products/${id}`}>
+          <button className="btn btn-active btn-neutral">view more</button>
+          </Link>
         </div>
       </div>
     </div>
