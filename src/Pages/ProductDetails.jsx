@@ -1,25 +1,23 @@
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 const ProductDetails = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const product = useLoaderData();
   const { title, description, thumbnail, stock, rating, price, images } =
     product;
-  
 
-    const AddToCart = () => {
-        swal({
-            title: `${title}`,
-            text: "successfully added to your cart",
-            icon: "success",
-            dangerMode: true,
-          })
+  const AddToCart = () => {
+    swal({
+      title: `${title}`,
+      text: "successfully added to your cart",
+      icon: "success",
+      dangerMode: true,
+    });
 
-     
-          navigate("/products")
-    }
- 
+    navigate(-1);
+  };
+
   return (
     <div className="flex justify-between gap-10">
       <div className="grid gap-4 w-[50%]">
@@ -132,8 +130,8 @@ const ProductDetails = () => {
           <span className="text-3xl font-bold text-gray-900 dark:text-white">
             ${price}
           </span>
-          <Link onClick={AddToCart}
-          
+          <Link
+            onClick={AddToCart}
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Add to cart

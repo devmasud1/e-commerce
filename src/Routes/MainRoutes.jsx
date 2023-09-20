@@ -7,11 +7,13 @@ import DashboardLayout from "../Layout/DashboardLayout";
 import DashBoard from "../Pages/DashBoard";
 import DashboardProfile from "../Pages/DashboardProfile";
 import DashboardEditProfile from "../Pages/DashboardEditProfile";
+import ErrorPage from "../Pages/ErrorPage";
 
 const myRoutes = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
